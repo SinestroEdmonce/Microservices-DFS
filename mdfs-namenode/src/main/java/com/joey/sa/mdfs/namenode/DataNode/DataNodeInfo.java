@@ -5,7 +5,6 @@ import javafx.util.Pair;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 
 /**
@@ -34,7 +33,7 @@ public class DataNodeInfo {
 
     // Available or not
     public boolean isAvailable(){
-        return this.availability;
+       return this.availability;
     }
 
     // Add file blocks to the given data node
