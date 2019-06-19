@@ -11,9 +11,11 @@ package com.joey.sa.mdfs.namenode.Error;
 
 
 public class ErrorPrinter {
+
     private static final String[] errorMessage = {
             "Error: PATH (%s) not exist!",
             "Error: FILE (%s) not exist!",
+            "Error: DataNodes are not enough for replicas! (%s)"
     };
 
     private int errorNum;

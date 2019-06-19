@@ -50,7 +50,7 @@ public class NameNodeController {
 
     // Load balance configuration
     @Value(value="${load-balance.visual-node-num}")
-    public int VISUAL_NODE_NUMBER;
+    public int VIRTUAL_NODE_NUMBER;
 
     @Value(value="${test-mode}")
     public boolean TEST_MODE;

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-
 /**
  * @projectName Microservices-DFS
  * @fileName DataNodeManager
@@ -17,6 +16,7 @@ import java.util.HashMap;
  * @function DataNode Manager, used to store the structure of data nodes and organize their information
  */
 public class DataNodeManager {
+
     private Map<String, DataNodeInfo> mapOfAddressAndNodeInfo = new HashMap<>();
 
     // Add new data node

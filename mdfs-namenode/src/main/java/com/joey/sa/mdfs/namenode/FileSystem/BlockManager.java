@@ -16,6 +16,7 @@ import java.util.Map;
  * @function Block Manager, used to store files' blocks
  */
 public class BlockManager {
+
     private Map<Pair<String, Long>, List<String>> mapOfBlockAndDataNode = new HashMap<>();
 
     // Obtain the block information

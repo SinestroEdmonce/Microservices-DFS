@@ -17,6 +17,7 @@ import java.util.Map;
  * @function File Manager, used to store the structure of files and all files from users
  */
 public class FileManager {
+
     // A tree structure for file storage
     private class FileTreeNode {
         // Directory or not
