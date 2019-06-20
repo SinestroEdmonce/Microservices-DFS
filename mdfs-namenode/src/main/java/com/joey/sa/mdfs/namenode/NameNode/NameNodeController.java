@@ -471,8 +471,8 @@ public class NameNodeController {
         new ErrorPrinter(15, "");
 
         this.deleteTempFiles();
-        new File(BLOCKS_DIR).mkdirs();
-        new File(DOWNLOAD_DIR).mkdirs();
+        boolean __ = new File(BLOCKS_DIR).mkdirs();
+        __ = new File(DOWNLOAD_DIR).mkdirs();
 
         this.loadBalanceManager.setNumVirtualNodes(this.VIRTUAL_NODE_NUMBER);
     }
