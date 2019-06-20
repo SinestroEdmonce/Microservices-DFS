@@ -193,7 +193,6 @@ public class FileManager {
         }
 
         // File not exists
-        new ErrorPrinter(2, fileName);
         return false;
     }
 

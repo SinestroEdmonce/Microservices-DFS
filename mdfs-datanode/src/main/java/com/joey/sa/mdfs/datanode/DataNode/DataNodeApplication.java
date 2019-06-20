@@ -1,13 +1,13 @@
-package com.joey.sa.mdfs.datanode;
+package com.joey.sa.mdfs.datanode.DataNode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DatanodeApplication {
+public class DataNodeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DatanodeApplication.class, args);
+		SpringApplication.run(DataNodeApplication.class, args);
 	}
 
 }

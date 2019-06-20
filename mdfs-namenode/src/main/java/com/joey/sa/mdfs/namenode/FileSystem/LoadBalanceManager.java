@@ -230,7 +230,7 @@ public class LoadBalanceManager {
     }
 
     // Record transfer information of files on the data node that will be removed later
-    public Map<String, String> updateDataNodeOfFiles(String address){
+    public Map<String, String> transferFiles4OfflineDataNode(String address){
         // Check status of files' storage locations before the re-allocation
         this.showFilesOnDataNode();
         Map<String, String> mapOfFileAndAddr = new HashMap<>();
@@ -311,7 +311,7 @@ public class LoadBalanceManager {
         return mapOfFileAndAddr;
     }
 
-    private void showFilesOnDataNode(){
+    public void showFilesOnDataNode(){
         System.out.println("Load Balance Manager:");
 
         for (HashNode node: this.hashNodeList){
