@@ -69,7 +69,7 @@ public class FileSystemDatabaseService implements DatabaseService{
                     .map(this.rootLocation::relativize);
         }
         catch (IOException e) {
-            throw new DatabaseException("Failed to read stored files", e);
+            throw new DatabaseException("Failed to read saved files", e);
         }
 
     }
@@ -88,13 +88,13 @@ public class FileSystemDatabaseService implements DatabaseService{
                 return resource;
             }
             else {
-                throw new StorageFileNotFoundException(
+                throw new DatabaseFileNotFoundException(
                         "Could not read file: " + filename);
 
             }
         }
         catch (MalformedURLException e) {
-            throw new StorageFileNotFoundException("Could not read file: " + filename, e);
+            throw new DatabaseFileNotFoundException("Could not read file: " + filename, e);
         }
     }
 
@@ -107,9 +107,6 @@ public class FileSystemDatabaseService implements DatabaseService{
     public void delete(String filename) {
         File file = load(filename).toFile();
         FileSystemUtils.deleteRecursively(file);
-//        if(file.exists()){
-//            file.delete();
-//        }
     }
 
     @Override
@@ -118,7 +115,7 @@ public class FileSystemDatabaseService implements DatabaseService{
             Files.createDirectories(rootLocation);
         }
         catch (IOException e) {
-            throw new StorageException("Could not initialize storage", e);
+            throw new DatabaseException("Could not initialize database", e);
         }
     }
 }
