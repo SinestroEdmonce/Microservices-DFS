@@ -11,13 +11,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @time 2019-06-20 12:41
  * @function Database Property, used to store a database's attributes
  */
-@ConfigurationProperties("storage")
+@ConfigurationProperties("database")
 public class DatabaseProperty {
 
     @Value(value = "${server.port}")
     private Integer location;
 
-    public String getLocation() {
+    public String getLocation(){
         return location.toString();
     }
 }

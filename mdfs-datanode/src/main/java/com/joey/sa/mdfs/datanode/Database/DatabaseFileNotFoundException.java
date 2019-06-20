@@ -10,11 +10,11 @@ package com.joey.sa.mdfs.datanode.Database;
  */
 public class DatabaseFileNotFoundException extends DatabaseException {
 
-    public DatabaseFileNotFoundException(String message) {
+    public DatabaseFileNotFoundException(String message){
         super(message);
     }
 
-    public DatabaseFileNotFoundException(String message, Throwable cause) {
+    public DatabaseFileNotFoundException(String message, Throwable cause){
         super(message, cause);
     }
 

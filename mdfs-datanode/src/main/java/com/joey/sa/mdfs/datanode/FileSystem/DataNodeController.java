@@ -41,18 +41,18 @@ public class DataNodeController {
 
 
     @Autowired
-    public DataNodeController(DatabaseService databaseService) {
+    public DataNodeController(DatabaseService databaseService){
         this.databaseService = databaseService;
     }
 
     @GetMapping("/")
-    public Map<String, BlockInfo> listUploadedFiles() throws IOException {
+    public Map<String, BlockInfo> listUploadedFiles() throws IOException{
         return this.mapOfFileAndBlock;
     }
 
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
-    public ResponseEntity<Resource> handleFileDownload(@PathVariable String fileName) {
+    public ResponseEntity<Resource> handleFileDownload(@PathVariable String fileName){
 
         Resource file = this.databaseService.loadAsResource(fileName);
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
@@ -61,7 +61,7 @@ public class DataNodeController {
 
     @DeleteMapping("/files/{filename:.+}")
     @ResponseBody
-    public String deleteFile(@PathVariable String filename) {
+    public String deleteFile(@PathVariable String filename){
         this.databaseService.delete(filename);
         this.mapOfFileAndBlock.remove(filename);
         return "Success";
@@ -69,16 +69,16 @@ public class DataNodeController {
 
     @DeleteMapping("/allFiles")
     @ResponseBody
-    public String deleteAll() {
+    public String deleteAll(){
         this.databaseService.deleteAll();
         this.mapOfFileAndBlock.clear();
         return "Success";
     }
 
     @PostMapping("/")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public String handleFileUpload(@RequestParam("file") MultipartFile file){
         String fileName = file.getOriginalFilename();
-        if (this.mapOfFileAndBlock.keySet().contains(fileName)) {
+        if (this.mapOfFileAndBlock.keySet().contains(fileName)){
             return "Fail";
         }
 
@@ -94,7 +94,7 @@ public class DataNodeController {
     }
 
     @ExceptionHandler(DatabaseFileNotFoundException.class)
-    public ResponseEntity<?> handleStorageFileNotFound(DatabaseFileNotFoundException e) {
+    public ResponseEntity<?> handleStorageFileNotFound(DatabaseFileNotFoundException e){
         return ResponseEntity.notFound().build();
     }
 
