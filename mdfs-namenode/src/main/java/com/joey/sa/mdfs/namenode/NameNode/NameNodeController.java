@@ -56,7 +56,7 @@ public class NameNodeController {
     public int BLOCK_SIZE;
 
     // Load balance configuration
-    @Value(value="${load-balance.visual-node-num}")
+    @Value(value="${load-balance.virtual-node-num}")
     public int VIRTUAL_NODE_NUMBER;
 
     @Value(value="${test-mode}")
@@ -225,8 +225,10 @@ public class NameNodeController {
         try {
             // Download file into a input stream
             String resource = dataNode + "files/" + fileName;
+
             UrlResource urlResource = new UrlResource(new URL(resource));
             InputStream inputStream = urlResource.getInputStream();
+
 
             // Write into a byte array
             byte[] bytes = new byte[this.BLOCK_SIZE];
@@ -303,7 +305,7 @@ public class NameNodeController {
             Resource resource = new UrlResource(file2Download.toURI());
 
             return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
-                    "attachment;filename="+"\""+resource.getFilename()+"\"").body(resource);
+                    "attachment; filename="+"\""+resource.getFilename()+"\"").body(resource);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -315,7 +317,7 @@ public class NameNodeController {
     public String handleFileUpload(@RequestParam("file") MultipartFile file){
         try{
             String path = request.getRequestURI().replaceFirst("/", "");
-            String filePath = path + file.getOriginalFilename();
+            String filePath = path+file.getOriginalFilename();
             String fileName = path.replace("/", "_")+file.getOriginalFilename();
 
             if (this.fileManager.isContained(filePath)){
@@ -335,7 +337,7 @@ public class NameNodeController {
                 int blockSize = bufferedInputStream.read(blockByteArray);
                 File block = writeBlock(fileName, blockByteArray, indexOfBlock, blockSize);
 
-                List<String> dataNode4Storage = getDataNode4Storage(block);
+                List<String> dataNode4Storage = this.getDataNode4Storage(block);
 
                 for (String dataNode: dataNode4Storage){
                     boolean response = saveBlock(dataNode, block);
@@ -467,8 +469,11 @@ public class NameNodeController {
     @EventListener
     public void listen(EurekaServerStartedEvent event){
         new ErrorPrinter(15, "");
+
+        this.deleteTempFiles();
         new File(BLOCKS_DIR).mkdirs();
         new File(DOWNLOAD_DIR).mkdirs();
+
         this.loadBalanceManager.setNumVirtualNodes(this.VIRTUAL_NODE_NUMBER);
     }
 }

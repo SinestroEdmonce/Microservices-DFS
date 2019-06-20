@@ -1,4 +1,4 @@
-package com.joey.sa.mdfs.namenode.NameNode;
+package com.joey.sa.mdfs.namenode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

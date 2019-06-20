@@ -1,0 +1,14 @@
+sping:
+    application:
+        name: mdfs-datanode
+
+eureka:
+    instance:
+        prefer-ip-address: true
+        instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+
+

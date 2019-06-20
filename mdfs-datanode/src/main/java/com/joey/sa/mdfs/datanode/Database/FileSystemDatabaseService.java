@@ -53,6 +53,9 @@ public class FileSystemDatabaseService implements DatabaseService{
                                 + filename);
             }
             try (InputStream inputStream = file.getInputStream()){
+                // File storage location
+                System.out.println(this.rootLocation.resolve(filename));
+
                 Files.copy(inputStream, this.rootLocation.resolve(filename),
                         StandardCopyOption.REPLACE_EXISTING);
             }

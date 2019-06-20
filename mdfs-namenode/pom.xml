@@ -8,9 +8,11 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.joey.sa</groupId>
 	<artifactId>mdfs-namenode</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+
 	<name>Namenode</name>
 	<description>The implementation for Namenode in distributed file system, including different functions such as load balance, dynamic service discovery and replicates</description>
 
@@ -66,6 +68,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.1.5.RELEASE</version>
 			</plugin>
 		</plugins>
 	</build>

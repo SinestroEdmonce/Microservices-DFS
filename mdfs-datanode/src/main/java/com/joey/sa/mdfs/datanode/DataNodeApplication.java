@@ -1,11 +1,11 @@
-package com.joey.sa.mdfs.datanode.DataNode;
+package com.joey.sa.mdfs.datanode;
 
 import com.joey.sa.mdfs.datanode.Database.DatabaseProperty;
 import com.joey.sa.mdfs.datanode.Database.DatabaseService;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
@@ -18,14 +18,10 @@ public class DataNodeApplication {
 	}
 
 	@Bean
-	public CommandLineRunner runner(DatabaseService databaseService){
-		return new CommandLineRunner() {
-			@Override
-			public void run(String... args) throws Exception {
-				System.out.println(databaseService.getClass());
-				databaseService.deleteAll();
-				databaseService.init();
-			}
+	CommandLineRunner init(DatabaseService databaseService) {
+		return (args) -> {
+			databaseService.deleteAll();
+			databaseService.init();
 		};
 	}
 

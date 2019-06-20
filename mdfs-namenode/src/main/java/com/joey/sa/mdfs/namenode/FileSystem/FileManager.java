@@ -62,7 +62,7 @@ public class FileManager {
 
             if (next==null){
                 // Output error information
-                new ErrorPrinter(1, filePath).printError();
+                // new ErrorPrinter(1, filePath).printError();
                 return null;
             }
 

@@ -75,11 +75,12 @@ public class BlockManager {
         System.out.println("Block Manager: ");
 
         for (Map.Entry<Pair<String, Long>, List<String>> entry: this.mapOfBlockAndDataNode.entrySet()) {
-            System.out.println("Block No. " + entry.getKey().getKey() + "#" + entry.getKey().getValue());
+            System.out.println("\tBlock No. " + entry.getKey().getKey() + "#" + entry.getKey().getValue());
             for (String dataNode: entry.getValue()){
-                System.out.println("\t - "+dataNode);
+                System.out.println("\t\t - "+dataNode);
             }
         }
+        System.out.println();
     }
 
 }

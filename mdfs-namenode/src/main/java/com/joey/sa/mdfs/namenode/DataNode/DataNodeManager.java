@@ -71,10 +71,11 @@ public class DataNodeManager {
         System.out.println("DataNode Manager: ");
 
         for (Map.Entry<String, DataNodeInfo> entry: this.mapOfAddressAndNodeInfo.entrySet()) {
-            System.out.println("DataNode Addr. " + entry.getKey());
+            System.out.println("\tDataNode Addr. " + entry.getKey());
             for (Pair<String, Long> block: entry.getValue().getBlocks()){
-                System.out.println("\t : "+block.getKey()+"#"+block.getValue());
+                System.out.println("\t\t : "+block.getKey()+"#"+block.getValue());
             }
         }
+        System.out.println();
     }
 }
