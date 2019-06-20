@@ -74,3 +74,39 @@
         ```
 
 ## ``Microservices-DFS``运行时刻截图
+
+- NameNode状态和DataNode服务注册信息：
+
+<div align=center><img width="400" height="150" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/name-node-status.jpg"/> </div>
+
+- 文件上传，``Microservices-DFS``上的文件信息：
+
+<div align=center><img width="400" height="90" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/files-upload.jpg"/> </div>
+
+- ``Microservices-DFS``上的文件块分布情况：
+
+<div align=center><img width="500" height="350" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/blocks-on-node.jpg"/> </div>
+
+- 文件删除，``Microservices-DFS``上的文件信息：
+
+<div align=center><img width="400" height="70   " src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/files-deleted.jpg"/> </div>
+
+- 新DataNode结点注册，NameNode结点动态地维持负载均衡
+
+    - ``Microservices-DFS``上的文件块分布情况：
+
+    <div align=center><img width="420" height="360" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/blocks-node-new-node-registered.jpg"/> </div>
+
+    - ``Microservices-DFS``上的DataNode结点存储信息：
+
+    <div align=center><img width="420" height="210" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/node-files-new-node-registered.jpg"/> </div>
+
+- DataNode结点离线，迁移数据到其他结点：
+
+    - ``Microservices-DFS``上的文件块分布情况：
+
+    <div align=center><img width="420" height="300" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/blocks-node-node-offline.jpg"/> </div>
+
+    - ``Microservices-DFS``上的DataNode结点存储信息：
+
+    <div align=center><img width="420" height="210" src="https://github.com/SinestroEdmonce/Microservices-DFS/raw/master/image/node-files-node-offline.jpg"/> </div>
