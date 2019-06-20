@@ -11,7 +11,7 @@
 - [x] DataNode服务可弹性扩展，启动一个DataNode服务后，NameNode可发现并将其纳入系统
 - [x] DataNode下线时NameNode将迁移该DataNode上的数据到其他活跃结点上
 - [x] NameNode使用一致性Hash策略，新DataNode被注册时将会动态维持负载均衡
-- [ ] 为服务NameNode的前端页面
+- [ ] NameNode的前端页面
 
 ## 接口说明
 
