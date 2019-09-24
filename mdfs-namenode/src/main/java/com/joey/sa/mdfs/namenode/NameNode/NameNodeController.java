@@ -46,6 +46,7 @@ import java.util.Map;
  * @time 2019-06-19 11:00
  * @function REST Controller, used to response different requests from clients
  */
+
 @RestController
 public class NameNodeController {
     // Block configuration
